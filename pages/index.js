@@ -9,6 +9,7 @@ export default function IndexPage({ results, copyright }) {
           {info["display_name"]} &rArr;
         </Link>
       ))}
+      <h3>{copyright}</h3>
     </>
   );
 }
@@ -18,7 +19,6 @@ export async function getServerSideProps() {
     await fetch("https://books-api.nomadcoders.workers.dev/lists")
   ).json();
   return {
-    props: results,
-    copyright,
+    props: { results, copyright },
   };
 }
