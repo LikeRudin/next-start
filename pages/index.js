@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 export default function IndexPage({ results, copyright }) {
   return (
     <>
-      {response?.map((info) => (
-        <Link href={`/list/${info["list_name_encoded"]}`}>
+      {results?.map((info, index) => (
+        <Link href={`/list/${info["list_name_encoded"]} key=${index}`}>
           {info["display_name"]} &rArr;
         </Link>
       ))}
