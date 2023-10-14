@@ -5,7 +5,7 @@ export default function IndexPage({ results, copyright }) {
   return (
     <>
       {results?.map((info, index) => (
-        <Link href={`/list/${info["list_name_encoded"]} key=${index}`}>
+        <Link href={`/list/${info["list_name_encoded"]}`} key={index}>
           {info["display_name"]} &rArr;
         </Link>
       ))}
