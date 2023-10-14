@@ -4,11 +4,12 @@ import { useRouter } from "next/router";
 export default function IndexPage({ results, copyright }) {
   return (
     <>
-      {response?.map((info) => (
-        <Link href={`/list/${info["list_name_encoded"]}`}>
+      {results?.map((info, index) => (
+        <Link href={`/list/${info["list_name_encoded"]} key=${index}`}>
           {info["display_name"]} &rArr;
         </Link>
       ))}
+      <h3>{copyright}</h3>
     </>
   );
 }
@@ -18,7 +19,6 @@ export async function getServerSideProps() {
     await fetch("https://books-api.nomadcoders.workers.dev/lists")
   ).json();
   return {
-    props: results,
-    copyright,
+    props: { results, copyright },
   };
 }
