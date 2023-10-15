@@ -13,7 +13,7 @@ export default function Detail({ results, copyright }) {
             <div className="inner-info">
               <span className="title">{info.title}</span>
               <span className="author">{info.author}</span>
-              <a className="buy-link" href={info.amazon_pruduct_url}>
+              <a className="buy-link" href={info.amazon_product_url}>
                 buy Now &rArr;
               </a>
             </div>
@@ -98,7 +98,7 @@ export async function getServerSideProps({ params }) {
   console.log(params.id);
   const { results, copyright } = await (
     await fetch(
-      ` https://books-api.nomadcoders.workers.dev/list?name=${params.id}`,
+      ` https://books-api.nomadcoders.workers.dev/list?name=${params.id}`
     )
   ).json();
   return {
