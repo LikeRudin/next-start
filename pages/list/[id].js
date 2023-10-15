@@ -2,6 +2,7 @@ export default function Detail({ results, copyright }) {
   return (
     <>
       <h1> {results["list_name"]}</h1>
+
       {results?.books.map((info, index) => (
         <div className="container" key={index}>
           <div
@@ -48,7 +49,7 @@ export default function Detail({ results, copyright }) {
           color: #000;
         }
 
-        .buyLink:hover {
+        .buy-link:hover {
           background-color: rgba(0, 0, 0, 0.2);
           cursor: pointer;
         }
