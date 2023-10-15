@@ -14,8 +14,11 @@ export default function Detail({ results, copyright }) {
 }
 
 export async function getServerSideProps({ params }) {
+  console.log(params.id);
   const { results, copyright } = await (
-    await fetch(` https://books-api.nomadcoders.workers.dev/list/${params.id}`)
+    await fetch(
+      ` https://books-api.nomadcoders.workers.dev/list?name=${params.id}`,
+    )
   ).json();
   return {
     props: { results, copyright },
