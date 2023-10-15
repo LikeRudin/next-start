@@ -4,17 +4,23 @@ export default function NavBar() {
   return (
     <>
       <nav>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
       </nav>
       <style jsx>{`
         nav {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          text-decoration: none;
           font-size: large;
           font-weight: bold;
+        }
+        a {
+          text-decoration: none;
         }
       `}</style>
     </>
