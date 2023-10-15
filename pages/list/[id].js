@@ -98,7 +98,7 @@ export async function getServerSideProps({ params }) {
   console.log(params.id);
   const { results, copyright } = await (
     await fetch(
-      ` https://books-api.nomadcoders.workers.dev/list?name=${params.id}`
+      ` https://books-api.nomadcoders.workers.dev/list?name=${params.id}`,
     )
   ).json();
   return {
